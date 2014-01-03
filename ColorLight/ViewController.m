@@ -9,7 +9,6 @@
 #import "ViewController.h"
 
 @interface ViewController ()
-
 - (IBAction)switchOnOff:(UISwitch *)sender;
 @end
 
@@ -28,5 +27,10 @@
 }
 
 - (IBAction)switchOnOff:(UISwitch *)sender {
+    if (sender.on) {
+        self.view.backgroundColor = [UIColor greenColor];
+    }else{
+        self.view.backgroundColor = [UIColor blueColor];
+    }
 }
 @end
