@@ -10,6 +10,7 @@
 
 @interface ViewController ()
 
+- (IBAction)switchOnOff:(UISwitch *)sender;
 @end
 
 @implementation ViewController
@@ -26,4 +27,6 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)switchOnOff:(UISwitch *)sender {
+}
 @end
