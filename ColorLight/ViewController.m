@@ -9,12 +9,17 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+{
+    double colorRed, colorGreen, colorBlue;
+}
+
 - (IBAction)switchOnOff:(UISwitch *)sender;
 - (IBAction)selectSegment:(UISegmentedControl *)sender;
 - (IBAction)clickButton:(UIButton *)sender;
 - (IBAction)selectRed:(UISlider *)sender;
 - (IBAction)selectGreen:(UISlider *)sender;
 - (IBAction)selectBlue:(UISlider *)sender;
+
 @end
 
 @implementation ViewController
@@ -23,6 +28,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    colorRed = colorGreen = colorBlue = 0.5;
 }
 
 - (void)didReceiveMemoryWarning
@@ -65,17 +71,20 @@
 }
 
 - (IBAction)selectRed:(UISlider *)sender {
-    UIColor *color = [UIColor colorWithRed:sender.value green:0.5 blue:1.0 alpha:1.0];
+    colorRed = sender.value;
+    UIColor *color = [UIColor colorWithRed:colorRed green:colorGreen blue:colorBlue alpha:1.0];
     self.view.backgroundColor = color;
 }
 
 - (IBAction)selectGreen:(UISlider *)sender {
-    UIColor *color = [UIColor colorWithRed:0.5 green:sender.value blue:0.5 alpha:1.0];
+    colorGreen = sender.value;
+    UIColor *color = [UIColor colorWithRed:colorRed green:colorGreen blue:colorBlue alpha:1.0];
     self.view.backgroundColor = color;
 }
 
 - (IBAction)selectBlue:(UISlider *)sender {
-    UIColor *color = [UIColor colorWithRed:0.5 green:0.5 blue:sender.value alpha:1.0];
+    colorBlue = sender.value;
+    UIColor *color = [UIColor colorWithRed:colorRed green:colorGreen blue:colorBlue alpha:1.0];
     self.view.backgroundColor = color;
 }
 @end
