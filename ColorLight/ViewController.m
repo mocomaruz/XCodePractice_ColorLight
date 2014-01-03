@@ -19,6 +19,8 @@
 - (IBAction)selectRed:(UISlider *)sender;
 - (IBAction)selectGreen:(UISlider *)sender;
 - (IBAction)selectBlue:(UISlider *)sender;
+@property (strong, nonatomic) IBOutlet UIView *blueRange;
+@property (weak, nonatomic) IBOutlet UIProgressView *blueSlider;
 
 @end
 
@@ -84,6 +86,7 @@
 
 - (IBAction)selectBlue:(UISlider *)sender {
     colorBlue = sender.value;
+    self.blueSlider.progress = colorBlue;
     UIColor *color = [UIColor colorWithRed:colorRed green:colorGreen blue:colorBlue alpha:1.0];
     self.view.backgroundColor = color;
 }
