@@ -51,7 +51,13 @@
 }
 
 - (IBAction)clickButton:(UIButton *)sender {
-    NSLog(@"segment %d",sender.selectedSegmentIndex);
+    UIAlertView * alert = [[UIAlertView alloc]
+                           initWithTitle:@"やっほー"
+                           message:@"餃子大好き！"
+                           delegate:self
+                           cancelButtonTitle:nil
+                           otherButtonTitles:@"OK",nil];
     
+    [alert show];
 }
 @end
