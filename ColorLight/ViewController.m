@@ -11,6 +11,7 @@
 @interface ViewController ()
 - (IBAction)switchOnOff:(UISwitch *)sender;
 - (IBAction)selectSegment:(UISegmentedControl *)sender;
+- (IBAction)clickButton:(UIButton *)sender;
 @end
 
 @implementation ViewController
@@ -47,5 +48,10 @@
     }else{
         self.view.backgroundColor = [UIColor yellowColor];
     }
+}
+
+- (IBAction)clickButton:(UIButton *)sender {
+    NSLog(@"segment %d",sender.selectedSegmentIndex);
+    
 }
 @end
