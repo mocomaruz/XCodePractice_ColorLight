@@ -12,6 +12,9 @@
 - (IBAction)switchOnOff:(UISwitch *)sender;
 - (IBAction)selectSegment:(UISegmentedControl *)sender;
 - (IBAction)clickButton:(UIButton *)sender;
+- (IBAction)selectRed:(UISlider *)sender;
+- (IBAction)selectGreen:(UISlider *)sender;
+- (IBAction)selectBlue:(UISlider *)sender;
 @end
 
 @implementation ViewController
@@ -59,5 +62,20 @@
                            otherButtonTitles:@"OK",nil];
     
     [alert show];
+}
+
+- (IBAction)selectRed:(UISlider *)sender {
+    UIColor *color = [UIColor colorWithRed:sender.value green:0.5 blue:1.0 alpha:1.0];
+    self.view.backgroundColor = color;
+}
+
+- (IBAction)selectGreen:(UISlider *)sender {
+    UIColor *color = [UIColor colorWithRed:0.5 green:sender.value blue:0.5 alpha:1.0];
+    self.view.backgroundColor = color;
+}
+
+- (IBAction)selectBlue:(UISlider *)sender {
+    UIColor *color = [UIColor colorWithRed:0.5 green:0.5 blue:sender.value alpha:1.0];
+    self.view.backgroundColor = color;
 }
 @end
